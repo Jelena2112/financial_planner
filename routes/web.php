@@ -15,4 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+
 });
+Route::get('/add-paycheck', [\App\Http\Controllers\PaycheckController::class, 'addPaycheck'])->name('add_paycheck');
+
+Route::post('/savePaycheck',[\App\Http\Controllers\PaycheckController::class,'savePaycheck'])->name('save_paycheck');
