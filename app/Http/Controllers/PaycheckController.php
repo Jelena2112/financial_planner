@@ -31,5 +31,6 @@ class PaycheckController extends Controller
            'user_id' => Auth::id()
        ]);
 
+       return redirect('/');
    }
 }

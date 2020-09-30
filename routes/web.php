@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 Route::get('/add-paycheck', [\App\Http\Controllers\PaycheckController::class, 'addPaycheck'])->name('add_paycheck');
 Route::get('/expenses',[\App\Http\Controllers\ExpensesController::class, 'expenses'] )->name('expenses');
+Route::get('/current-expenses',  [\App\Http\Controllers\ExpensesController::class, 'currentExpenses'])->name('current_expenses');
 
 Route::post('/savePaycheck',[\App\Http\Controllers\PaycheckController::class,'savePaycheck'])->name('save_paycheck');
 Route::post('/savexpenses',  [\App\Http\Controllers\ExpensesController::class, 'saveExpenses'])->name('save_expenses');

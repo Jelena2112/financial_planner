@@ -20,7 +20,6 @@ class ExpensesController extends Controller
 
     public function saveExpenses(Request $request)
     {
-
         Expenses::create([
             'user_id' => Auth::id(),
             'travel' => $request->get('travel'),
@@ -29,5 +28,16 @@ class ExpensesController extends Controller
             'other' => $request->get('other')
         ]);
 
+        return redirect()->route('current_expenses');
+    }
+
+    public function currentExpenses()
+    {
+
+       $allExpenses = Expenses::where([
+           'user_id'=>Auth::id()
+       ])->get();
+
+       return view("current_expenses",['allExpenses' => $allExpenses]);
     }
 }

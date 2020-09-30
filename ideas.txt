@@ -1,0 +1,1 @@
+1. vezati dva korisnika sa house_id ...da se mogu racunati kao 1 domacinstvo
