@@ -20,12 +20,6 @@ class ExpensesController extends Controller
 
     public function saveExpenses(Request $request)
     {
-        $request->validate([
-            'travel' => 'required|min:1',
-            'clothes' => 'required|min:1',
-            'bills' => 'required|min:1',
-            'other' => 'required|min:1',
-        ]);
 
         Expenses::create([
             'user_id' => Auth::id(),
